@@ -1,0 +1,67 @@
+// gobal font family
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+* {
+    font-family: "Space Mono", monospace !important;
+}
+
+// navbar edits
+
+/* header stars */
+
+#nav-main-menu-1>.nav-items>.nav-link {
+    position: relative;
+}
+
+#nav-main-menu-1>.nav-items>.nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 0;
+    height: 0.10rem;
+    background: linear-gradient(-45deg, var(--bs-warning) 50%, var(--bs-danger) 50%);
+    transition: all 0.5s ease;
+}
+
+#nav-main-menu-1>.nav-items>.nav-link:hover::before {
+    width: 100%;
+}
+
+#main-menu-service-dropdown {
+    .service-dropdown-container {
+        position: absolute;
+        z-index: 999999999999999999;
+        left: 50%;
+        top: 100%;
+        width: 100%;
+        height: 15rem;
+        transform: translateX(-50%);
+        background-color: var(--bs-light);
+        opacity: 1;
+        visibility: hidden;
+        // transition: all 0.2s ease;
+    }
+
+    @media screen and (max-wdith: 576px) {
+        display: none;
+    }
+
+}
+
+#main-menu-service-dropdown:hover .service-dropdown-container {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%);
+}
+
+.navbar-cta-icon {
+    position: absolute;
+    left: -30px;
+    transition: all 0.5s ease;
+}
+
+.navbar-cta:hover .navbar-cta-icon {
+    left: 100%;
+}
