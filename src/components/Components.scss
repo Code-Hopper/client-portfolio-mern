@@ -1,6 +1,8 @@
 // gobal font family
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 
 * {
     font-family: "Space Mono", monospace !important;
@@ -29,39 +31,286 @@
     width: 100%;
 }
 
-#main-menu-service-dropdown {
-    .service-dropdown-container {
-        position: absolute;
-        z-index: 999999999999999999;
-        left: 50%;
-        top: 100%;
-        width: 100%;
-        height: 15rem;
-        transform: translateX(-50%);
-        background-color: var(--bs-light);
-        opacity: 1;
-        visibility: hidden;
-        // transition: all 0.2s ease;
+.navbar-nav {
+    >.dropdown {
+        position: unset;
     }
 
-    @media screen and (max-wdith: 576px) {
-        display: none;
+    @media screen and (max-width: 576px) {
+        >.dropdown {
+            position: relative;
+        }
     }
 
 }
 
-#main-menu-service-dropdown:hover .service-dropdown-container {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%);
+.service-dropdown-container {
+    padding: 1rem;
+    border: none;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+
+    >div {
+        display: flex;
+        gap: 1rem;
+
+        >.navbar-service-dropdown-item {
+            width: 250px;
+            height: 250px;
+            background-color: rgb(255, 255, 255);
+        }
+
+    }
+
+    @media screen and (max-width: 576px) {
+        >div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
+
+.dropdown-service-image-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    >img {
+        grid-row: 1/1;
+        grid-column: 1/ span 2;
+    }
+
+    >span {
+        grid-row: 1/1;
+        grid-column: 1/ span 2;
+        background-color: rgba(0, 0, 0, 0.55);
+        color: var(--bs-warning);
+        text-align: center;
+        font-weight: bolder;
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    >span::before {
+        content: "More Info";
+        border-radius: 11px;
+        background-color: var(--bs-warning);
+        color: var(--bs-dark);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        position: absolute;
+        transition: all 0.5s ease;
+    }
+
+    >span:hover::before {
+        top: 80%;
+    }
+
+}
+
+.navbar-cta>button {
+    z-index: 3;
 }
 
 .navbar-cta-icon {
     position: absolute;
-    left: -30px;
-    transition: all 0.5s ease;
+    left: 0;
+    transition: all 0.2s ease;
+    z-index: 0;
 }
 
 .navbar-cta:hover .navbar-cta-icon {
     left: 100%;
+}
+
+// heros container
+
+.heros-container {
+    padding: 5rem;
+    background: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)), url("../components/media/heros-pattern.png");
+    background-position: center;
+    background-size: cover;
+
+    @media screen and (max-width: 576px) {
+        padding: 5rem 0rem;
+    }
+
+}
+
+.heros-main-container-text {
+    >.fixed-column-type {
+        >h2 {
+            font-size: 3rem;
+            text-shadow: 1.3px 2.5px 0 black;
+        }
+
+        @media screen and (max-width : 576px) {
+            >h2 {
+                font-size: 1.5rem;
+                text-shadow: 1px 1.5px 0 black;
+            }
+        }
+
+    }
+
+}
+
+.heros-img {
+    .heros-media-img-container {
+        position: relative;
+
+        .heros-main-img {
+            position: absolute;
+        }
+
+        @media screen and (max-width : 576px) {
+            .heros-main-img {
+                position: relative;
+            }
+        }
+
+    }
+}
+
+/* social media sidebar starts */
+
+/* social media sidebar for mobile and desktop and tablet */
+
+/* special whatsapp */
+
+.social-media-target-button {
+    content: '';
+    /* background-color: var(--bs-danger); */
+    padding: 0 0.5rem;
+    color: var(--bs-danger);
+    font-weight: 600;
+    cursor: pointer;
+    filter: drop-shadow(0 0 0.05rem black);
+}
+
+.icon-bar:hover .social-media-bar-content {
+    position: relative;
+    left: 0;
+}
+
+#whatsapp-mobile:hover {
+    font-size: 2em;
+}
+
+.icon-bar {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-70%);
+    z-index: 9999999;
+    transition: all 0.3s ease;
+}
+
+.icon-bar:hover {
+    transform: translateY(-50%) translateX(0);
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.google {
+    background: var(--bs-danger);
+    color: white;
+}
+
+.linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.whatsapp {
+    background: #04AA6D;
+    color: white;
+}
+
+/* social media sidebar ends */
+
+// perks 
+
+.perks-title {
+    .perks-section-main-heading::before {
+        font-family: 'Font Awesome 5 Free';
+        content: '\f120'; // User icon
+        font-weight: 900; // For solid icons
+        animation: changeIcons 2s ease-in infinite;
+        background-color: var(--bs-warning);
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    @keyframes changeIcons {
+        0% {
+            content: '\f120'; // User icon
+        }
+
+        25% {
+            content: '\f1d8'; // Bell icon
+        }
+
+        50% {
+            content: '\f0a1'; // Heart icon
+        }
+
+        75% {
+            content: '\e4b7'; // Eye icon
+        }
+
+        100% {
+            content: '\f120'; // Check-circle icon
+        }
+    }
+}
+
+.perks-points {
+    list-style: none;
+    padding: 0;
+    >li {
+        padding: 0;
+    }
+
+    >li::before {
+        font-family: 'Font Awesome 5 Free';
+        content: '\f101'; // User icon
+        font-weight: 900; // For solid icons
+        color: var(--bs-warning);
+        padding-right: .5rem;
+    }
 }

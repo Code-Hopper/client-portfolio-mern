@@ -4,11 +4,16 @@ import { FaCode } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
+// importing img for navbar dropdown
+import img1 from "../media/navbar-imgs/img1.png"
+import img2 from "../media/navbar-imgs/img2.png"
+import img3 from "../media/navbar-imgs/img3.png"
+import img4 from "../media/navbar-imgs/img4.png"
 
 const Header = () => {
     return (
         <>
-            <section id='header'>
+            <section className='position-sticky top-0' style={{zIndex: "10"}} id='header'>
                 <div className="container-fluid bg-black">
                     <div className="container">
                         <nav className="navbar navbar-expand-md bg-black">
@@ -43,18 +48,50 @@ const Header = () => {
                                         <li className="nav-items">
                                             <Link className="nav-link text-light" to="/">Home</Link>
                                         </li>
-                                        <li className="nav-items" id='main-menu-service-dropdown'>
-                                            <Link
-                                                className="nav-link text-light dropdown-toggle text-center"
+                                        <li className="nav-items dropdown" id='main-menu-service-dropdown'>
+
+                                            <button
+                                                className="d-inline-block nav-link text-light dropdown-toggle text-center"
+                                                data-bs-toggle="dropdown"
                                             >
                                                 Services
-                                            </Link>
+                                            </button>
 
-                                            <div className='service-dropdown-container rounded shadow'>
-                                                <span>service dropdown</span>
-                                                {/* design a service section only of desktop */}
-                                                <div className=''>
-
+                                            <div className='dropdown-menu service-dropdown-container rounded shadow'>
+                                                <div>
+                                                    {/* web development | mobile app development | Digital Marketing | Collab */}
+                                                    <div
+                                                        className='navbar-service-dropdown-item'
+                                                    >
+                                                        <div className='dropdown-service-image-container'>
+                                                            <img className='img-fluid' src={img1} alt="" />
+                                                            <span className='text'>Website Devlopment</span>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        className='navbar-service-dropdown-item'
+                                                    >
+                                                        <div className='dropdown-service-image-container'>
+                                                            <img className='img-fluid' src={img2} alt="" />
+                                                            <span className='text'>Mobile Devlopment</span>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        className='navbar-service-dropdown-item'
+                                                    >
+                                                        <div className='dropdown-service-image-container'>
+                                                            <img className='img-fluid' src={img3} alt="" />
+                                                            <span className='text'>Digital Marketing</span>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        className='navbar-service-dropdown-item'
+                                                    >
+                                                        <div className='dropdown-service-image-container'>
+                                                            <img className='img-fluid' src={img4} alt="" />
+                                                            <span className='text'>Professional Traning</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -78,11 +115,11 @@ const Header = () => {
 
                             {/* navbar-cta */}
 
-                            <div className="navbar-cta d-none d-md-flex bg-warning rounded-pill align-items-center px-1 position-relative">
+                            <div className="navbar-cta d-none d-md-flex align-items-center px-1 position-relative">
                                 <div className='navbar-cta-icon text-light'>
                                     <IoIosSend size={"30px"} />
                                 </div>
-                                <button className="btn fw-bolder">
+                                <button className="btn fw-bolder btn-warning rounded-pill">
                                     <span>Let's Talk</span>
                                 </button>
                             </div>
