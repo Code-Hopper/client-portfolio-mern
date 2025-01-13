@@ -302,6 +302,7 @@
 .perks-points {
     list-style: none;
     padding: 0;
+
     >li {
         padding: 0;
     }
@@ -314,3 +315,49 @@
         padding-right: .5rem;
     }
 }
+
+// career graph section
+
+.small-points{
+    > * {
+        width: 7px;
+    }
+}
+
+.milestone {
+
+    position: relative;
+    padding: 1rem;
+
+    .time-stamp {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+
+    .time-stamp-text {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 125px;
+        padding: 0.25rem;
+        text-align: center;
+        background-color: var(--bs-dark);
+        color: var(--bs-light);
+        font-size: 0.75rem;
+    }
+
+ 
+    .up-icon{
+        position: absolute;
+        padding: 0;
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-50%,0);
+        color: var(--bs-dark);
+    }
+
+}
+
