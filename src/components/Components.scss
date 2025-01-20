@@ -314,50 +314,50 @@
         color: var(--bs-warning);
         padding-right: .5rem;
     }
+}   
+
+// career
+
+.time-stamp-button {
+    border: none;
+    outline: none;
+    background-color: var(--bs-warning);
+    padding: 0rem 1rem;
+    transition: all 0.3s ease; /* Add smooth transition for all properties */
 }
 
-// career graph section
-
-.small-points{
-    > * {
-        width: 7px;
-    }
-}
-
-.milestone {
-
+.time-stamp-button.active {
     position: relative;
-    padding: 1rem;
-
-    .time-stamp {
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translate(-50%,0);
-    }
-
-    .time-stamp-text {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%,0);
-        width: 125px;
-        padding: 0.25rem;
-        text-align: center;
-        background-color: var(--bs-dark);
-        color: var(--bs-light);
-        font-size: 0.75rem;
-    }
-
- 
-    .up-icon{
-        position: absolute;
-        padding: 0;
-        bottom: 100%;
-        left: 50%;
-        transform: translate(-50%,0);
-        color: var(--bs-dark);
-    }
-
+    z-index: 1;
+    transform: scale(1.1); /* Slightly enlarge the active button */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth scaling and background color transition */
 }
 
+.time-stamp-button.active::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--bs-light);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.time-stamp-button:not(.active) {
+    transform: scale(1); /* Reset scale */
+    transition: transform 0.3s ease; /* Smooth dimming and scaling */
+}
+
+.time-stamp-button:hover {
+    opacity: 1; /* Highlight button on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.recent-case-studies-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 1rem;
+}
