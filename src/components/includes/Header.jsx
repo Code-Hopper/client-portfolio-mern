@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom"
 import { FaCode } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
@@ -11,9 +12,16 @@ import img3 from "../media/navbar-imgs/img3.png"
 import img4 from "../media/navbar-imgs/img4.png"
 
 const Header = () => {
+
+    let navigate = useNavigate()
+
+    const handelGoTo = (to) => {
+        navigate(to); // Replace with your target route
+    };
+
     return (
         <>
-            <section className='position-sticky top-0' style={{zIndex: "10"}} id='header'>
+            <section className='position-sticky top-0' style={{ zIndex: "10" }} id='header'>
                 <div className="container-fluid bg-black">
                     <div className="container">
                         <nav className="navbar navbar-expand-md bg-black">
@@ -63,7 +71,7 @@ const Header = () => {
                                                     <div
                                                         className='navbar-service-dropdown-item'
                                                     >
-                                                        <div className='dropdown-service-image-container'>
+                                                        <div className='dropdown-service-image-container' onClick={()=>handelGoTo("/service/web-development")}>
                                                             <img className='img-fluid' src={img1} alt="" />
                                                             <span className='text'>Website Devlopment</span>
                                                         </div>
@@ -71,7 +79,7 @@ const Header = () => {
                                                     <div
                                                         className='navbar-service-dropdown-item'
                                                     >
-                                                        <div className='dropdown-service-image-container'>
+                                                        <div className='dropdown-service-image-container' onClick={()=>handelGoTo("/service/mobile-development")}>
                                                             <img className='img-fluid' src={img2} alt="" />
                                                             <span className='text'>Mobile Devlopment</span>
                                                         </div>
@@ -79,7 +87,7 @@ const Header = () => {
                                                     <div
                                                         className='navbar-service-dropdown-item'
                                                     >
-                                                        <div className='dropdown-service-image-container'>
+                                                        <div className='dropdown-service-image-container' onClick={()=>handelGoTo("/service/digital-marketing")}>
                                                             <img className='img-fluid' src={img3} alt="" />
                                                             <span className='text'>Digital Marketing</span>
                                                         </div>
@@ -87,7 +95,7 @@ const Header = () => {
                                                     <div
                                                         className='navbar-service-dropdown-item'
                                                     >
-                                                        <div className='dropdown-service-image-container'>
+                                                        <div className='dropdown-service-image-container' onClick={()=>handelGoTo("/service/professional-traning")}>
                                                             <img className='img-fluid' src={img4} alt="" />
                                                             <span className='text'>Professional Traning</span>
                                                         </div>
@@ -97,16 +105,13 @@ const Header = () => {
 
                                         </li>
                                         <li className="nav-items">
+                                            <Link className="nav-link text-light" to="/">About Me</Link>
+                                        </li>
+                                        <li className="nav-items">
                                             <Link className="nav-link text-light" to="/">Projects</Link>
                                         </li>
                                         <li className="nav-items">
                                             <Link className="nav-link text-light" to="/">Blogs</Link>
-                                        </li>
-                                        <li className="nav-items">
-                                            <Link className="nav-link text-light" to="/">About Me</Link>
-                                        </li>
-                                        <li className="nav-items">
-                                            <Link className="nav-link text-light" to="/">Testimonials</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -119,7 +124,7 @@ const Header = () => {
                                 <div className='navbar-cta-icon text-light'>
                                     <IoIosSend size={"30px"} />
                                 </div>
-                                <button className="btn fw-bolder btn-warning rounded-pill">
+                                <button onClick={()=>handelGoTo("/getconnected")} className="btn fw-bolder btn-warning rounded-pill" type='button'>
                                     <span>Let's Talk</span>
                                 </button>
                             </div>

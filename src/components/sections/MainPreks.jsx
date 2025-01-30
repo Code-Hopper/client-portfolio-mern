@@ -3,7 +3,7 @@ import React from 'react'
 const MainPreks = () => {
   return (
     <>
-      <div className="container-fluid bg-dark">
+      <div className="container-fluid bg-dark position-relative z-n1">
         <div className="container p-2 text-light text-start">
           <span>Professional <span className='text-warning'> Developer & Trainer</span> </span>
         </div>

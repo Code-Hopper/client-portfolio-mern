@@ -77,6 +77,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    cursor: pointer;
 
     >img {
         grid-row: 1/1;
@@ -237,7 +238,7 @@
 }
 
 .facebook {
-    background: #3B5998;
+    background: #000000;
     color: white;
 }
 
@@ -314,50 +315,297 @@
         color: var(--bs-warning);
         padding-right: .5rem;
     }
-}   
+}
 
 // career
 
-.time-stamp-button {
-    border: none;
-    outline: none;
-    background-color: var(--bs-warning);
-    padding: 0rem 1rem;
-    transition: all 0.3s ease; /* Add smooth transition for all properties */
+.career-timeline-main-container {
+    padding: 8rem 0 0 0;
+
+    .career-timeline-accordion {
+        background-color: var(--bs-light);
+        outline: 5rem solid var(--bs-light);
+        z-index: 0;
+        padding: 0 13rem 0 2rem;
+
+        @media screen and (max-width : 576px) {
+            padding: 1rem;
+        }
+
+    }
+
+    @media screen and (max-width:576px) {
+        padding: 2rem 0 0 0;
+    }
+
 }
 
-.time-stamp-button.active {
+.career-accordion {
+
+    .accordion {
+        .accordion-item {
+            border: none !important;
+
+            .accordion-button {
+                border-radius: 0;
+                background-color: var(--bs-dark);
+                color: var(--bs-light);
+            }
+
+            .accordion-button:focus {
+                outline: none;
+                /* Removes the default focus outline */
+                box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.5);
+                /* Custom focus style, orange glow */
+                border-color: rgba(255, 165, 0, 0.8);
+                /* Optional: Adjust border color */
+            }
+
+            .accordion-button::after {
+                content: '\25BC';
+                /* Unicode for down arrow */
+                font-size: 1rem;
+                /* Adjust size */
+                color: var(--bs-light);
+                /* Change the color */
+                margin-left: 0.5rem;
+                /* Add spacing */
+                transition: transform 0.3s ease;
+                /* Smooth rotation */
+            }
+
+            /* Change the icon for collapsed state */
+            .accordion-button.collapsed::after {
+                content: '\25BA';
+                /* Unicode for right arrow */
+                color: var(--bs-warning);
+                /* Color for collapsed state */
+                transform: rotate(0deg);
+                /* No rotation */
+            }
+
+            .accordion-collapse {
+                background-color: var(--bs-light);
+            }
+
+        }
+    }
+
+}
+
+// services
+
+.service-card {
     position: relative;
     z-index: 1;
-    transform: scale(1.1); /* Slightly enlarge the active button */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth scaling and background color transition */
+    overflow: hidden;
+    transition: all 0.5s ease;
 }
 
-.time-stamp-button.active::before {
+.service-card::before {
     content: "";
-    width: 100%;
+    width: 0%;
     height: 100%;
-    background-color: var(--bs-light);
-    position: absolute;
-    left: 0;
+    background-color: var(--bs-dark);
     top: 0;
+    left: 0;
+    position: absolute;
     z-index: -1;
-    transition: background-color 0.3s ease; /* Smooth background transition */
+    transition: all 0.5s ease;
 }
 
-.time-stamp-button:not(.active) {
-    transform: scale(1); /* Reset scale */
-    transition: transform 0.3s ease; /* Smooth dimming and scaling */
+.service-card:hover::before,
+.service-card:hover {
+    width: 100%;
+    color: var(--bs-light) !important;
 }
 
-.time-stamp-button:hover {
-    opacity: 1; /* Highlight button on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+.service-card:hover>span {
+    color: var(--bs-dark) !important;
 }
 
-.recent-case-studies-grid{
+.service-card:hover {
+    .service-card-icon {
+        background-color: var(--bs-light) !important;
+
+        >* {
+            color: var(--bs-dark) !important;
+        }
+
+    }
+
+    span {
+        color: var(--bs-dark);
+    }
+
+}
+
+// tech stack
+
+.tech-stack-tile {
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    border: 2px solid var(--bs-secondary);
+}
+
+.tech-stack-tile::before {
+    content: "";
+    background-color: var(--bs-warning);
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.tech-stack-tile:hover::before {
+    width: 100%;
+}
+
+#about-me {
+    background: var(--bs-dark);
+}
+
+// recent blogs
+
+.blog-grid-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 200px);
     gap: 1rem;
+
+    .recent-blog-1 {
+        grid-row: 1 / span 3;
+        grid-column: 1 / span 1;
+    }
+
+    .recent-blog-container {
+        display: grid;
+        background-color: var(--bs-secondary);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        .recent-blog-thumbnail {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                transform: translateZ(-1) scale(1);
+                object-fit: cover; // Ensures the image behaves like background-size: cover
+                display: block; // Prevents the image from inheriting inline spacing
+            }
+
+        }
+
+        >* {
+            grid-row: 1/ span 2;
+            grid-column: 1 / span 2;
+        }
+
+        .recent-blog-extra {
+            background-color: rgba(0, 0, 0, 0.55);
+            color: var(--bs-light);
+            transition: all 0.5s ease;
+        }
+
+        .recent-blog-extra:hover {
+            background-color: rgba(138, 136, 136, 0.55);
+        }
+    }
+
+    .recent-blog-extra {
+        display: flex;
+        align-items: end;
+        padding: 1rem;
+    }
+
+    // adjustment for mobile device
+
+    @media screen and (max-width : 576px) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 200px);
+        gap: 0rem;
+        gap: 1rem;
+
+        .recent-blog-1 {
+            grid-row: 1 / span 1;
+            grid-column: 1 / span 1;
+        }
+    }
+}
+
+// main contact form
+
+.contact-form {
+
+    .form-control:focus,
+    .form-select:focus {
+        border: 1px solid rgba(254, 193, 53, .5);
+        box-shadow: 0px 0px 0px var(--bs-warning) !important;
+        outline: 2px solid var(--bs-warning);
+    }
+}
+
+
+.quick-links-footer {
+    list-style: none;
+    padding: 0;
+
+    >li::before {
+        font-family: 'Font Awesome 5 Free';
+        padding: 1rem;
+        content: '\f101'; // User icon
+        font-weight: 900; // For solid icons    
+    }
+
+}
+
+// work button pop-up
+
+#start-working-pop-up {
+    position: fixed;
+    max-width: 500px;
+    left: 50%;
+    top: 50%;
+    border: 5px solid rgba(255, 193, 7, 1);
+    outline: 100vh solid rgba(0, 0, 0, 0.5);
+    border-radius: 14px;
+    transform: translate(-50%, -50%);
+    z-index: 99999999999;
+    background-color: var(--bs-dark);
+
+    .form-control:focus,
+    .form-select:focus {
+        border: 1px solid rgba(254, 193, 53, .5);
+        box-shadow: 0px 0px 0px var(--bs-warning) !important;
+        outline: 2px solid var(--bs-warning);
+    }
+
+
+    .work-pop-up-close-btn {
+        position: absolute;
+        left: 100%;
+        top: 0%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media screen and (max-width : 576px) {
+        max-width: 100%;
+        left: 0;
+        top: 0;
+        transform: translate(0);
+
+        .work-pop-up-close-btn {
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }
