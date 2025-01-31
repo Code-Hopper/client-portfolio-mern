@@ -609,3 +609,115 @@
         }
     }
 }
+
+.service-page-heros {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./media/career.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+.service-page-content {
+
+    .form-control:focus,
+    .form-select:focus {
+        border: 1px solid rgba(254, 193, 53, .5);
+        box-shadow: 0px 0px 0px var(--bs-warning) !important;
+        outline: 2px solid var(--bs-warning);
+    }
+
+    aside.service-get-quote {
+        .main-form {
+            position: sticky;
+            top: 15%;
+        }
+    }
+
+    aside.service-get-quote.mobile-active {
+        >.main-form {
+            transform: scale(1);
+            transition: transform 0.65s ease;
+        }
+    }
+
+    aside.service-get-quote.mobile-active {
+        >.main-form {
+            transform: scale(1.1);
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        aside.service-get-quote {
+            visibility: hidden;
+            width: 100%;
+            position: fixed !important;
+            left: 50%;
+            top: 50%;
+            z-index: 999999;
+            transform: translate(-50%, -50%);
+            outline: 500px solid rgba(0, 0, 0, .8);
+        }
+
+        aside.service-get-quote {
+            >.main-form {
+                transform: translateX(100%);
+                transition: transform 0.5s ease !important; 
+            }
+        }
+    
+
+        aside.service-get-quote.mobile-active {
+            visibility: visible;
+
+            >.main-form {
+                transform: translateX(0%);
+            }
+
+        }
+    }
+}
+
+.service-page-content-plans-models {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    padding: 2rem 0;
+
+    .service-model-items {
+        padding: 1rem;
+
+        .service-item-price {
+            cursor: pointer;
+        }
+
+        .service-item-preks-container {
+
+            .service-item-perks {
+                list-style: none;
+                padding: 0;
+
+                >li::before {
+                    font-family: 'Font Awesome 5 Free';
+                    content: '\f058';
+                    font-weight: 900;
+                    padding-right: 0.3rem;
+                    color: var(--bs-success);
+                }
+            }
+
+            .service-item-addons-perks {
+                list-style: none;
+                padding: 0;
+
+                >li::before {
+                    font-family: 'Font Awesome 5 Free';
+                    content: '\f058';
+                    font-weight: 900;
+                    padding-right: 0.3rem;
+                    color: var(--bs-light);
+                }
+
+            }
+        }
+    }
+
+}

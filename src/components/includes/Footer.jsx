@@ -13,7 +13,6 @@ const Footer = () => {
 
                             <div className="navbar-brand text-light d-flex align-items-center gap-2">
                                 <div className="bg-warning rounded-circle position-relative" style={{ width: "40px", height: "40px" }}>
-                                    <i className="text-dark fontawesome-family fa-solid fa-code position-absolute start-50 top-50 translate-middle"></i>
                                     <FaCode className='text-dark position-absolute start-50 top-50 translate-middle' />
                                 </div>
                                 <span>Code<span className="fw-bolder text-warning">Hopper</span></span>
