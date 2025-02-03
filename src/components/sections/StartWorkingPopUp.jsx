@@ -4,7 +4,7 @@ import { FaArrowDown, FaPaperPlane, FaRedo } from "react-icons/fa";
 const StartWorkingPopUp = ({ closePopup }) => {
     return (
         <>
-            <div id='start-working-pop-up' className='popup-overlay'>
+            <div id='start-working-pop-up' className='popup-overlay show'>
                 <div className='work-pop-up-close-btn bg-danger d-inline-block p-2 rounded-circle border border-3 border-light'>
                     <button className='btn btn-close' onClick={closePopup}>
                     </button>

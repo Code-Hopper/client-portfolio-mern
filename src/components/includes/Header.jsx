@@ -94,9 +94,9 @@ const Header = () => {
                                                     <div
                                                         className='navbar-service-dropdown-item'
                                                     >
-                                                        <div className='dropdown-service-image-container' onClick={()=>handelGoTo("/service/professional-traning")}>
+                                                        <div className='dropdown-service-image-container' onClick={()=>handelGoTo("/service/professional-training")}>
                                                             <img className='img-fluid' src={img4} alt="" />
-                                                            <span className='text'>Professional Traning</span>
+                                                            <span className='text'>Professional Training</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -104,7 +104,7 @@ const Header = () => {
 
                                         </li>
                                         <li className="nav-items">
-                                            <Link className="nav-link text-light" to="/">About Me</Link>
+                                            <Link className="nav-link text-light" to="/about-me">About Me</Link>
                                         </li>
                                         <li className="nav-items">
                                             <Link className="nav-link text-light" to="/">Projects</Link>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { FaBullhorn, FaLaptopCode, FaCode } from "react-icons/fa";
 import { TbDeviceMobileMessage } from "react-icons/tb";
 
@@ -45,7 +46,7 @@ const MainServices = () => {
                                         Gateway Integrations
                                     </span>
                                 </div>
-                                <button className='btn btn-warning'>Learn More</button>
+                                <Link className='btn btn-warning' to="/service/web-development">Learn More</Link>
                             </div>
                         </div>
                         <div className="col service-card-col">
@@ -71,7 +72,7 @@ const MainServices = () => {
                                         Data Collection
                                     </span>
                                 </div>
-                                <button className='btn btn-warning'>Learn More</button>
+                                <Link className='btn btn-warning' to="/service/mobile-development">Learn More</Link>
                             </div>
                         </div>
                         <div className="col service-card-col">
@@ -97,10 +98,10 @@ const MainServices = () => {
                                         Oraganic Marketing
                                     </span>
                                     <span className='bg-light border px-2 rounded-pill'>
-                                        Lead Genrations 
+                                        Lead Genrations
                                     </span>
                                 </div>
-                                <button className='btn btn-warning'>Learn More</button>
+                                <Link className='btn btn-warning' to="/service/digital-marketing">Learn More</Link>
                             </div>
                         </div>
                         <div className="col service-card-col">
@@ -129,7 +130,7 @@ const MainServices = () => {
                                         Gateway Integrations
                                     </span>
                                 </div>
-                                <button className='btn btn-warning'>Learn More</button>
+                                <Link className='btn btn-warning' to="/service/professional-training">Learn More</Link>
                             </div>
                         </div>
                     </div>

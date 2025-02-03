@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import { Home } from "./components/pages/Home.jsx"
 import { ServicePage } from "./components/pages/ServicePage.jsx"
 import { ContactPage } from "./components/pages/ContactPage.jsx"
+import AboutMePage from "./components/pages/AboutMePage.jsx"
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/service/:service" element={<ServicePage />} />
           <Route path="/getconnected" element={<ContactPage />} />
+          <Route path="/aboutme" element={<AboutMePage />} />
         </Routes>
       </BrowserRouter>
     </>

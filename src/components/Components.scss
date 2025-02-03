@@ -580,6 +580,7 @@
     z-index: 99999999999;
     background-color: var(--bs-dark);
 
+    
     .form-control:focus,
     .form-select:focus {
         border: 1px solid rgba(254, 193, 53, .5);
@@ -634,14 +635,26 @@
 
     aside.service-get-quote.mobile-active {
         >.main-form {
-            transform: scale(1);
+            animation: none;
             transition: transform 0.65s ease;
         }
     }
 
     aside.service-get-quote.mobile-active {
         >.main-form {
-            transform: scale(1.1);
+            animation: pop-quote-form-animation 0.5s ease 1;
+        }
+    }
+
+    @keyframes pop-quote-form-animation {
+        0%{
+            transform: scale(1) translateY(0);
+        }
+        50%{
+            transform: scale(1.1) translateY(2px);
+        }
+        100%{
+            transform: scale(1) translateY(0);
         }
     }
 
