@@ -3,8 +3,10 @@ import React from 'react'
 import { FaJava, FaPython, FaJs, FaBootstrap, FaReact, FaNodeJs, FaPhp, FaAndroid, FaUbuntu, FaFedora, FaAws, FaFigma, FaLinux, FaTerminal, FaGithub, FaSketch, FaSass } from 'react-icons/fa6'
 import { SiExpress, SiMongodb, SiMysql, SiDotnet, SiApache, SiNginx, SiNetlify, SiAdobephotoshop, SiAdobeillustrator, SiCanva, SiVim } from "react-icons/si";
 import { BiLogoJquery } from "react-icons/bi";
+import { Link } from 'react-router-dom';
 
-const AboutMe = () => {
+const AboutMe = ({ hideLearnMore }) => {
+
   return (
     <>
       <div className='container-fluid py-5' id='about-me'>
@@ -111,11 +113,13 @@ const AboutMe = () => {
             </div>
 
           </div>
-
-          <div className='py-3 text-center'>
-            <button className='btn btn-outline-light fw-bolder'>Learn More</button>
-          </div>
-
+          {
+            hideLearnMore ?
+              <div className='py-3 text-center'>
+                <Link to="/about-me" className='btn btn-outline-light fw-bolder'>Learn More</Link>
+              </div>
+              : null
+          }
         </div>
       </div>
     </>

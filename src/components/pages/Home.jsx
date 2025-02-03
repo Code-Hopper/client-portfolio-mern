@@ -22,7 +22,7 @@ const Home = () => {
             <Heros />
             <MainPreks />
             <MainServices />
-            <AboutMe />
+            <AboutMe hideLearnMore={true} />
             <StartConversation />
             <MyCareer />
             {/* create a seperate page for displaying projects */}

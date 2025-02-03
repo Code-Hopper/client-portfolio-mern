@@ -44,7 +44,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/service/:service" element={<ServicePage />} />
           <Route path="/getconnected" element={<ContactPage />} />
-          <Route path="/aboutme" element={<AboutMePage />} />
+          <Route path="/about-me" element={<AboutMePage />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -1,10 +1,17 @@
 import React from 'react'
+import { Header } from '../includes/Header'
+import Footer from '../includes/Footer'
+import AboutMe from '../sections/AboutMe'
+import AbouteMeExtra from "../sections/AbouteMeExtra"
 
 const AboutMePage = () => {
   return (
-    <div>
-      <h1>about me page</h1>
-    </div>
+    <>
+      <Header />
+      <AboutMe hideLearnMore={false} />
+      <AbouteMeExtra />
+      <Footer />
+    </>
   )
 }
 
