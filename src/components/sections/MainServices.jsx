@@ -20,7 +20,7 @@ const MainServices = () => {
                 <div className='container'>
 
                     <div className='row flex-md-row flex-column main-service-row g-5 g-md-3 '>
-                        <div className="col service-card-col">
+                        <div className="col service-card-col" data-aos="fade">
                             <div className='d-flex flex-column align-items-center gap-2 bg-light shadow-sm border-0 service-card p-3'>
                                 <div className='service-card-icon bg-dark p-3 rounded-circle d-inline-block'>
                                     <FaLaptopCode className='text-warning' size={"30px"} />
@@ -49,7 +49,7 @@ const MainServices = () => {
                                 <Link className='btn btn-warning' to="/service/web-development">Learn More</Link>
                             </div>
                         </div>
-                        <div className="col service-card-col">
+                        <div className="col service-card-col" data-aos="fade">
                             <div className='d-flex flex-column align-items-center gap-2 bg-light shadow-sm border-0 service-card p-3'>
                                 <div className='service-card-icon bg-dark p-3 rounded-circle d-inline-block'>
                                     <TbDeviceMobileMessage className='text-warning' size={"30px"} />
@@ -75,7 +75,7 @@ const MainServices = () => {
                                 <Link className='btn btn-warning' to="/service/mobile-development">Learn More</Link>
                             </div>
                         </div>
-                        <div className="col service-card-col">
+                        <div className="col service-card-col" data-aos="fade">
                             <div className='d-flex flex-column align-items-center gap-2 bg-light shadow-sm border-0 service-card p-3'>
                                 <div className='service-card-icon bg-dark p-3 rounded-circle d-inline-block'>
                                     <FaBullhorn className='text-warning' size={"30px"} />
@@ -104,7 +104,7 @@ const MainServices = () => {
                                 <Link className='btn btn-warning' to="/service/digital-marketing">Learn More</Link>
                             </div>
                         </div>
-                        <div className="col service-card-col">
+                        <div className="col service-card-col" data-aos="fade">
                             <div className='d-flex flex-column align-items-center gap-2 bg-light shadow-sm border-0 service-card p-3'>
                                 <div className='service-card-icon bg-dark p-3 rounded-circle d-inline-block'>
                                     <FaCode className='text-warning' size={"30px"} />

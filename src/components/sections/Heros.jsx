@@ -59,7 +59,7 @@ const Heros = () => {
                                     </p>
 
                                     <div className='heros-cta'>
-                                        <button className='btn btn-dark' onClick={openWorkPopUp}>
+                                        <button className='btn btn-dark' onClick={openWorkPopUp} data-aos="slide-left">
                                             Let's start working <FaPenNib className='text-warning' />
                                         </button>
                                     </div>
@@ -67,7 +67,7 @@ const Heros = () => {
                             </div>
                             <div className="col heros-img">
                                 <div className='heros-media-img-container w-100 h-100 z-3'>
-                                    <img className='img-fluid heros-main-img' src={herosImg} alt="Hero" />
+                                    <img className='img-fluid heros-main-img' src={herosImg} alt="Hero" data-aos="slide-right" />
                                 </div>
                             </div>
                         </div>

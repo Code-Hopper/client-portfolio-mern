@@ -13,7 +13,13 @@ import { ServicePage } from "./components/pages/ServicePage.jsx"
 import { ContactPage } from "./components/pages/ContactPage.jsx"
 import AboutMePage from "./components/pages/AboutMePage.jsx"
 
+import AOS from "aos"
+
 function App() {
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();

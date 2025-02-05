@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from "aos"
 import { Header } from '../includes/Header'
 import Heros from '../sections/Heros'
 import MainPreks from '../sections/MainPreks'
@@ -14,6 +15,12 @@ import Footer from '../includes/Footer'
 // import Projects from '../sections/Projects'
 
 const Home = () => {
+
+    useEffect(() => {
+        AOS.init({ once: false }); // Allow animations to repeat
+        AOS.refreshHard(); // Force AOS to reapply animations
+    }, [])
+
     return (
         <>
             <Header />

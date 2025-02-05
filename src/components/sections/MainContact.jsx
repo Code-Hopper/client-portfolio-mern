@@ -9,7 +9,7 @@ const MainContact = () => {
     return (
         <>
             <div className="container-fluid py-3">
-                <div className="container">
+                <div className="container" data-aos="fade">
                     <div className='py-4'>
                         <div className='position-relative border border-2 border-secondary d-inline-block p-1 fw-bolder'>
                             <span className=''> Get In <span className='bg-warning p-1 text-dark'> Touch </span> </span>
@@ -21,7 +21,7 @@ const MainContact = () => {
                     </div>
                 </div>
 
-                <div className="container">
+                <div className="container" data-aos="fade">
                     <div className="row flex-column flex-md-row gap-3 py-4">
                         <div className='col d-flex flex-column justify-content-end'>
                             

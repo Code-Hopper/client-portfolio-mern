@@ -9,7 +9,7 @@ const AboutMe = ({ hideLearnMore }) => {
 
   return (
     <>
-      <div className='container-fluid py-5' id='about-me'>
+      <div className='container-fluid py-5' id='about-me' data-aos="fade">
         <div className="container">
           <div className="row gap-5 align-items-center">
             <div className="col text-light">
@@ -115,7 +115,7 @@ const AboutMe = ({ hideLearnMore }) => {
           </div>
           {
             hideLearnMore ?
-              <div className='py-3 text-center'>
+              <div className='py-3 text-center' data-aos="slide-up">
                 <Link to="/about-me" className='btn btn-outline-light fw-bolder'>Learn More</Link>
               </div>
               : null

@@ -20,12 +20,12 @@ const MyCareer = () => {
                 <div className="career-timeline-action-container py-5">
                     <div className="container-fluid">
                         <div className='row career-timeline-row py-3 flex-column flex-md-row'>
-                            <div className="col career-image text-light fs-4 p-0">
+                            <div className="col career-image text-light fs-4 p-0 position-relative z-3" data-aos="zoom-in">
                                 
-                                <img className='img-fluid position-relative z-3' src={careerphoto} alt="" />
+                                <img className='img-fluid' src={careerphoto} alt="" />
 
                             </div>
-                            <div className="col career-timeline-accordion">
+                            <div className="col career-timeline-accordion position-relative" data-aos="zoom-in">
                                 <div>
                                     <span className='fw-bolder fs-3'>
                                         Code, Solve, Create

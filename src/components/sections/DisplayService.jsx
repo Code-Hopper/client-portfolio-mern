@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import { WebDevelopmentArray, DigitalMarketingArray, MobileAppDevelopmentArray, ProfessionalTrainingArray } from './ServiceData/Services.js';
 
@@ -19,16 +21,15 @@ const DisplayService = () => {
     useEffect(() => {
         const selectedService = serviceCategories[service] || [];
         setServiceArray(selectedService);
-    }, [service]);
+
+        AOS.init({ once: false }); // Allow animations to repeat
+        AOS.refreshHard(); // Force AOS to reapply animations
+    }, [service]); // Runs whenever `service` changes
 
     const DisplayServiceItem = (serviceItem) => (
-        <div key={serviceItem.service_id} className='service-model-items shadow border bg-light rounded d-flex flex-column gap-3'>
-            <span className='service-item-title fw-bolder'>
-                {serviceItem.service_name}
-            </span>
-            <div className='service-item-description'>
-                {serviceItem.service_description}
-            </div>
+        <div key={serviceItem.service_id} className='service-model-items shadow border bg-light rounded d-flex flex-column gap-3' data-aos="fade-down">
+            <span className='service-item-title fw-bolder'>{serviceItem.service_name}</span>
+            <div className='service-item-description'>{serviceItem.service_description}</div>
             <div className='service-item-preks-container container-fluid'>
                 <div className='row'>
                     <div className='col-12 col-md-6'>
@@ -62,9 +63,7 @@ const DisplayService = () => {
                     <div className='row flex-column flex-md-row gap-4'>
                         <div className='col d-flex flex-column gap-4'>
                             <span className='text-warning fw-bolder fs-1'>{service}</span>
-                            <span className='fw-semibold text-light'>
-                                Creating Website - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </span>
+                            <span className='fw-semibold text-light'>Creating Website - Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
                             <div className='text-light d-flex gap-2 align-items-center fw-medium'>
                                 <span>Service</span>
                                 <FaArrowRight />
