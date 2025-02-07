@@ -15,4 +15,4 @@ const AboutMePage = () => {
   )
 }
 
-export default AboutMePage
+export { AboutMePage }

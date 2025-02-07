@@ -11,7 +11,11 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import { Home } from "./components/pages/Home.jsx"
 import { ServicePage } from "./components/pages/ServicePage.jsx"
 import { ContactPage } from "./components/pages/ContactPage.jsx"
-import AboutMePage from "./components/pages/AboutMePage.jsx"
+import { AboutMePage } from "./components/pages/AboutMePage.jsx"
+import { ProjectsPage } from "./components/pages/ProjectsPage.jsx"
+
+// import admin pages
+import AdminLogin from "./Dashboard/pages/AdminLogin.jsx"
 
 import AOS from "aos"
 
@@ -51,6 +55,13 @@ function App() {
           <Route path="/service/:service" element={<ServicePage />} />
           <Route path="/getconnected" element={<ContactPage />} />
           <Route path="/about-me" element={<AboutMePage />} />
+          <Route path="/recent-projects" element={<ProjectsPage />} />
+          {/* add blogs routes */}
+
+          {/* dashboard routes */}
+
+          <Route path="/admin" element={<AdminLogin />} />
+
         </Routes>
       </BrowserRouter>
     </>
