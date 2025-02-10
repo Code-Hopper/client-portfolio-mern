@@ -1,7 +1,7 @@
 // gobal font family
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 
 * {
@@ -678,25 +678,17 @@ div.career-timeline-action-container.aboutme-extra {
             z-index: 999999;
             transform: translate(-50%, -50%);
             outline: 500px solid rgba(0, 0, 0, .8);
+            transition: visibility 0.5s ease, transform 0.5s ease;
         }
-
-        aside.service-get-quote {
-            >.main-form {
-                transform: translateX(100%);
-                transition: transform 0.5s ease !important;
-            }
-        }
-
-
+    
         aside.service-get-quote.mobile-active {
             visibility: visible;
-
+    
             >.main-form {
                 transform: translateX(0%);
             }
-
         }
-    }
+    }    
 }
 
 .service-page-content-plans-models {

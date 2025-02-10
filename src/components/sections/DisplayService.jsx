@@ -26,7 +26,11 @@ const DisplayService = () => {
         AOS.refreshHard(); // Force AOS to reapply animations
     }, [service]); // Runs whenever `service` changes
 
-    const DisplayServiceItem = (serviceItem) => (
+    const toggleSidebar = () => {
+        setIsSidebarOpenMobile(prev => !prev);
+    };
+
+    const DisplayServiceItem = (serviceItem, index) => (
         <div key={serviceItem.service_id} className='service-model-items shadow border bg-light rounded d-flex flex-column gap-3' data-aos="fade-down">
             <span className='service-item-title fw-bolder'>{serviceItem.service_name}</span>
             <div className='service-item-description'>{serviceItem.service_description}</div>
@@ -50,11 +54,23 @@ const DisplayService = () => {
                     </div>
                 </div>
             </div>
-            <button className='btn btn-warning p-2 rounded service-item-price' onClick={() => setIsSidebarOpenMobile(!isSidebarOpenMobile)}>
+            <button className='btn btn-warning p-2 rounded service-item-price'
+                onClick={() => {
+                    toggleSidebar();
+                    qouteFormSelectOptions(index);
+                }}>
                 Starting from <span className='fw-bolder'>Rs.{serviceItem.service_price}/-</span> + (Optional Addons)
             </button>
         </div>
     );
+
+    const qouteFormSelectOptions = (index) => {
+        const selectElement = document.getElementById("quote-service-form");
+        if (selectElement && selectElement.options[index]) {
+            selectElement.selectedIndex = index; // Sets the selected option correctly
+        }
+    };
+
 
     return (
         <>
@@ -101,8 +117,14 @@ const DisplayService = () => {
                                             <div className='d-flex flex-column gap-2'>
                                                 <div><label>Service</label><input className='form-control' type='text' value={service} disabled /></div>
                                                 <div><label>Please Select Service Option</label>
-                                                    <select className='form-select'>
-                                                        <option value=''>Get data from actual file</option>
+                                                    <select className='form-select' id="quote-service-form">
+                                                        {
+                                                            serviceArray.map((serviceItem, index) => {
+                                                                return (
+                                                                    <option key={index} value=''>{serviceItem.service_name}</option>
+                                                                )
+                                                            })
+                                                        }
                                                     </select>
                                                 </div>
                                             </div>

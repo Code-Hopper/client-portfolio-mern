@@ -1,9 +1,74 @@
-#admin-login-section{
+#admin-login-section {
     width: 100vw;
     height: 100vh;
     background-color: var(--bs-dark);
+
+    /* Remove number input spinner */
+    input#admin-otp-field[type="number"]::-webkit-outer-spin-button,
+    input#admin-otp-field[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input#admin-otp-field[type="number"] {
+        -moz-appearance: textfield;
+        /* Firefox */
+        width: 240px;
+        height: 50px;
+        font-size: 1.8rem;
+        text-align: center;
+        letter-spacing: 0.5rem;
+        border: 2px solid var(--bs-secondary);
+        border-radius: 8px;
+        // background: var(--bs-dark);
+        color: var(--bs-dark);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Focus Effect */
+    input#admin-otp-field[type="number"]:focus {
+        border-color: var(--bs-warning);
+        // box-shadow: 0 0 10px rgba(254, 193, 53, 0.6);
+        outline: none;
+        background: var(--bs-light);
+    }
+
+    /* Center Input Field */
+    .otp-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+
+        >*{
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+
+    }
+
+    /* Buttons */
+    .otp-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .otp-buttons button {
+        width: 120px;
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 8px;
+        transition: transform 0.2s ease;
+    }
+
+    .otp-buttons button:hover {
+        transform: scale(1.05);
+    }
+
 }
 
-.admin-login-form{
+.admin-login-form {
     width: 500px;
 }
