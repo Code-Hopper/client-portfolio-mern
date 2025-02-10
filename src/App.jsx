@@ -18,6 +18,7 @@ import { ProjectsPage } from "./components/pages/ProjectsPage.jsx"
 import AdminLogin from "./Dashboard/pages/AdminLogin.jsx"
 
 import AOS from "aos"
+import Dashboard from "./Dashboard/pages/Dashboard.jsx"
 
 function App() {
 
@@ -61,6 +62,8 @@ function App() {
           {/* dashboard routes */}
 
           <Route path="/admin" element={<AdminLogin />} />
+
+          <Route path="/admin/dashboard" element={<Dashboard />} />
 
         </Routes>
       </BrowserRouter>

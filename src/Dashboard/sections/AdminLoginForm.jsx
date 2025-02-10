@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios"
-
+import { useNavigate } from 'react-router-dom';
 
 const AdminLoginForm = () => {
+
+    let navigate = useNavigate()
 
     let [showPassword, setShowPassword] = useState(false)
 
@@ -37,8 +39,9 @@ const AdminLoginForm = () => {
         if (value.length <= 6) setOtp(e.target.value)
     }
 
-    const handelOtpSubmit = () => {
-
+    const handelOtpSubmit = (e) => {
+        e.preventDefault()
+        navigate("/admin/dashboard")
     }
 
     const handelChange = (e) => {

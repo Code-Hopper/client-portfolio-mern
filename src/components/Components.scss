@@ -121,9 +121,19 @@
 
 }
 
-.navbar-cta>button {
+.navbar-cta > button {
     z-index: 3;
+    transform: scale(1);
+    transition: all 0.1s ease;
 }
+
+.navbar-cta > button:hover {
+    z-index: 3;
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+
+
 
 .navbar-cta-icon {
     position: absolute;
